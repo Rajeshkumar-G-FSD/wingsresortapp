@@ -1,0 +1,6 @@
+{
+  "name": "Wings Resort",
+  "description": "Luxury resort management and guest dashboard connected with Firebase real-time database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
