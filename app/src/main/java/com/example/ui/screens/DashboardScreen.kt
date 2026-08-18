@@ -443,6 +443,80 @@ fun DashboardScreen(
             Spacer(modifier = Modifier.height(14.dp))
         }
 
+        // Live Firebase DB Realtime Sync Card Banner
+        item {
+            LuxuryCard(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp, vertical = 6.dp),
+                backgroundColor = ResortTealDeep
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Default.Dataset,
+                                contentDescription = null,
+                                tint = ResortGold,
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = "Firebase DB Live Data Feed",
+                                style = MaterialTheme.typography.titleSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                            )
+                        }
+
+                        LiveStatusPulse(
+                            isLive = state.isFirebaseLive,
+                            text = if (state.rawDocs.isNotEmpty()) "${state.rawDocs.size} Live Docs" else "Realtime Synced"
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text(
+                        text = "Realtime stream for project wingsresort-1063b • Logged in as ${state.userProfile.displayName} (${state.userProfile.email})",
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            color = ResortGoldLight.copy(alpha = 0.85f),
+                            fontSize = 11.sp
+                        )
+                    )
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(ResortTealDark)
+                            .padding(horizontal = 12.dp, vertical = 8.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Column {
+                            Text("Reservations", style = MaterialTheme.typography.labelSmall, color = Color.Gray, fontSize = 10.sp)
+                            Text("${state.bookings.size} Active", style = MaterialTheme.typography.bodyMedium, color = Color.White, fontWeight = FontWeight.Bold)
+                        }
+                        Column {
+                            Text("Available Suites", style = MaterialTheme.typography.labelSmall, color = Color.Gray, fontSize = 10.sp)
+                            Text("${state.rooms.size} Villas", style = MaterialTheme.typography.bodyMedium, color = Color.White, fontWeight = FontWeight.Bold)
+                        }
+                        Column {
+                            Text("Dispatched Services", style = MaterialTheme.typography.labelSmall, color = Color.Gray, fontSize = 10.sp)
+                            Text("${state.services.size} Requests", style = MaterialTheme.typography.bodyMedium, color = ResortGold, fontWeight = FontWeight.Bold)
+                        }
+                    }
+                }
+            }
+        }
+
         // 5. Active Bookings from Firebase DB
         if (state.activeFilterCategory in listOf("All", "Bookings") && state.bookings.isNotEmpty()) {
             item {

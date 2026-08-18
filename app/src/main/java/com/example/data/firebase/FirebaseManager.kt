@@ -351,8 +351,8 @@ object FirebaseManager {
     fun getInitialBookings(): List<Booking> = listOf(
         Booking(
             id = "WNG-2026-089",
-            guestName = "Alexander Wright",
-            guestEmail = "rktechappcode@gmail.com",
+            guestName = "Krazy Wings VIP",
+            guestEmail = "krazywingsresort@gmail.com",
             suiteTitle = "Overwater Ocean Villa 108",
             suiteType = "Overwater Villa",
             roomNumber = "Villa 108",

@@ -82,8 +82,8 @@ fun AuthScreen(
     onLogin: (email: String, pass: String) -> Unit,
     onDemoLogin: (role: String) -> Unit
 ) {
-    var usernameOrEmail by remember { mutableStateOf("rktechappcode@gmail.com") }
-    var password by remember { mutableStateOf("wings2026") }
+    var usernameOrEmail by remember { mutableStateOf("krazywingsresort@gmail.com") }
+    var password by remember { mutableStateOf("Krazy@8844") }
     var isPasswordVisible by remember { mutableStateOf(false) }
 
     Box(

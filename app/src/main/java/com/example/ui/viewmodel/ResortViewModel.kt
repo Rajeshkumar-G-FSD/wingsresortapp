@@ -123,8 +123,8 @@ class ResortViewModel(application: Application) : AndroidViewModel(application) 
             } else {
                 UserProfile(
                     uid = "vip_guest_108",
-                    email = "rktechappcode@gmail.com",
-                    displayName = "Alexander Wright",
+                    email = "krazywingsresort@gmail.com",
+                    displayName = "Krazy Wings VIP",
                     role = "Guest",
                     roomNumber = "Villa 108",
                     memberTier = "Diamond Wings VIP",
